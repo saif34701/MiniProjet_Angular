@@ -1,0 +1,41 @@
+.details {
+  width: 70%;
+  margin: auto;
+  font-family: Arial;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #1976d2;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #125a9c;
+}
+
+.tag {
+  background: #1976d2;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+.cat {
+  background: #90caf9;
+}

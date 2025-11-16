@@ -1,0 +1,28 @@
+<div class="home">
+
+  <h1>Liste des Formations disponibles</h1>
+
+
+
+  <div class="formations-list">
+    <div class="card" *ngFor="let f of formations">
+
+      <h2>{{ f.titre }}</h2>
+
+      <img [src]="f.photo" alt="{{f.titre}}">
+
+      
+      <p><strong>Niveau :</strong> {{ f.niv }}</p>
+
+      
+      <a [routerLink]="['/details', f.id]">Voir détails</a>
+
+    </div>
+  </div>
+  <h2>Catégories de formations</h2>
+
+<ul class="categories">
+  <li *ngFor="let c of categories">{{ c }}</li>
+</ul>
+
+</div>
