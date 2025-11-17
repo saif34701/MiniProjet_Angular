@@ -4,20 +4,15 @@
   <img [src]="formation.photo" alt="{{ formation.titre }}" class="logo">
 
   <p><strong>Durée :</strong> {{ formation.chargeHor }} heures</p>
-  <p><strong>Niveau :</strong> {{ formation.niv }}</p>
-
   <p>
-    <strong>Mots clés :</strong>
-    <span class="tag" *ngFor="let m of formation.motCle">{{ m }}</span>
+    <strong>Participants :</strong> {{ formation.participants.length }} / {{ formation.maxParticipants }}
   </p>
   <p>
-    <strong>Categorie :</strong>
-    <span class="tag cat" *ngFor="let m of formation.categ">{{ m }}</span>
+    <strong>Description de la formation :</strong><span *ngFor="let s of Session">{{s.formateur}}</span>
   </p>
   <p>
-    <strong>Participants :</strong> {{ formation.participants?.length }} / {{ formation.maxParticipants }}
+    <strong>Formateur :</strong><span *ngFor="let f of Formateur">{{f.nom}}</span>
   </p>
-
   <hr>
 
   <h2>Inscription</h2>
@@ -30,8 +25,8 @@
 
 <button 
   (click)="inscrire()" 
-  [disabled]="formation.participants!.length >= formation.maxParticipants!"
-  class="btn-submit">
+  [disabled]="formation.participants.length >= formation.maxParticipants"
+  class="btn">
   S'inscrire
 </button>
 

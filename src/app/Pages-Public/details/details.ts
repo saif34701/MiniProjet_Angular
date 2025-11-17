@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { IFormation, IParticipant } from '../IFormations';
+import { IFormateur, IFormation, IParticipant, ISession } from '../../Interface';
 
 @Component({
   selector: 'app-details',
@@ -58,6 +58,29 @@ export class Details {
       participants: [],
     }
   ];
+  Formateur: IFormateur[]=[
+    {
+      id: 0,
+      nom:'Reguigui',
+      prenom: 'Saif',
+      photo: '',
+      email: 'saif@gmail.com',
+      tel: '90626951',
+      cin: '01234567',
+      cv: '',
+      specialite: ["dev"]
+    },
+  ]
+
+  Session: ISession[]=[
+    {
+      id: 0,
+      desc: '',
+      date: '',
+      formation: [],
+      formateur: []
+    }
+  ]
 
 ngOnInit() {
   const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -70,12 +93,8 @@ ngOnInit() {
 
 inscrire() {
 
-  if (!this.nom || !this.prenom || !this.email) {
-    alert("Veuillez remplir tous les champs.");
-    return;
-  }
+  
 
-  // 2. Storage key
   const key = JSON.stringify(this.formation.id);
   const existing: IParticipant[] = JSON.parse(localStorage.getItem(key) || '[]');
 
@@ -83,8 +102,11 @@ inscrire() {
     alert("Désolé, cette formation a atteint le nombre maximum de participants.");
     return; 
   }
+  if (!this.nom || !this.prenom || !this.email) {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
 
-  // 5. Create new participant
   const participant: IParticipant = {
     nom: this.nom,
     prenom: this.prenom,

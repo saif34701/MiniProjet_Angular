@@ -39,3 +39,7 @@ input {
 .cat {
   background: #90caf9;
 }
+.btn:disabled{
+   background: #758698;
+   
+}

@@ -6,7 +6,7 @@ export interface IFormation{
   niv:'Debutant'|'Intermediaire'|'Avance';
   motCle:string[];
   categ:string[];
-  participants?: IParticipant[];
+  participants: IParticipant[];
   maxParticipants: number;
 }
 export interface IParticipant {
@@ -24,4 +24,11 @@ export interface IFormateur{
     cin:string;
     cv:string;
     specialite:string[];
+}
+export interface ISession{
+  id:number;
+  formation:IFormation[];
+  formateur:IFormateur[];
+  desc:string;
+  date:string;
 }

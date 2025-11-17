@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IFormation } from '../IFormations';
+import { IFormation } from '../../Interface';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -51,14 +51,5 @@ export class Accueil {
       participants: [],
     }
   ];
-  categories: string[] = [];
 
-  constructor() {
-    this.categories = this.getCategories();
-  }
-
-  getCategories(): string[] {
-    const allCats = this.formations.flatMap(f => f.categ);
-    return [...new Set(allCats)]; 
-  }
 }
