@@ -92,9 +92,6 @@ ngOnInit() {
 
 
 inscrire() {
-
-  
-
   const key = JSON.stringify(this.formation.id);
   const existing: IParticipant[] = JSON.parse(localStorage.getItem(key) || '[]');
 
