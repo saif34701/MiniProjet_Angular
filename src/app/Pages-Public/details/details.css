@@ -1,45 +1,128 @@
-.details {
-  width: 70%;
-  margin: auto;
-  font-family: Arial;
+/* PAGE CONTAINER */
+.details-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.logo {
-  width: 180px;
-  margin-bottom: 20px;
+/* HEADER */
+.formation-header {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-input {
-  display: block;
-  width: 300px;
-  padding: 10px;
-  margin: 10px 0;
+.formation-image {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
 }
 
-.btn {
-  padding: 10px 20px;
-  background: #1976d2;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.formation-info h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #004a70;
 }
 
-.btn:hover {
-  background: #125a9c;
+.formation-meta {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .tag {
-  background: #1976d2;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
   color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-right: 5px;
 }
-.cat {
-  background: #90caf9;
+
+.niveau {
+  background: #0077a6;
 }
-.btn:disabled{
-   background: #758698;
-   
+
+.charge {
+  background: #00935d;
+}
+
+.formation-desc {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* MOTS CLÉS + CATÉGORIES */
+.keywords, .categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.keyword, .category {
+  background: #e2f3ff;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.category {
+  background: #ffe9c7;
+}
+
+/* SESSION CARD */
+.session-card {
+  background: #f8fafc;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.session-date-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.session-status {
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+}
+
+/* BUTTON */
+.btn-inscrire {
+  background: none;
+  border: 2px solid #0077a6;
+  color: #0077a6;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-inscrire:hover {
+  background: #0077a6;
+  color: white;
+}
+
+.btn-inscrire:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -1,11 +1,12 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes';
+import { provideRouter, withRouterConfig } from '@angular/router';
 import { App } from './app/app';
-import 'zone.js';  
+import { routes } from './app/app.routes';
+import 'zone.js'
 
 bootstrapApplication(App, {
   providers: [
-    provideRouter(routes)
+    provideRouter(routes),
+    provideRouter(routes, withRouterConfig({ onSameUrlNavigation: 'reload' }))
   ]
 });

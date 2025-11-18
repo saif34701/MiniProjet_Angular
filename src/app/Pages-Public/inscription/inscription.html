@@ -1,0 +1,18 @@
+<div class="inscription-container">
+
+  <h2>Inscription à la session</h2>
+
+  <label>Nom</label>
+  <input type="text" [(ngModel)]="nom">
+
+  <label>Prénom</label>
+  <input type="text" [(ngModel)]="prenom">
+
+  <label>Email</label>
+  <input type="email" [(ngModel)]="email">
+
+  <button class="btn-valider" (click)="validerInscription()">
+    Valider l'inscription
+  </button>
+
+</div>

@@ -1,14 +1,21 @@
-export interface IFormation{
-  id:number;
-  titre:string;
-  chargeHor:number;
-  photo:string;
-  niv:'Debutant'|'Intermediaire'|'Avance';
-  motCle:string[];
-  categ:string[];
-  participants: IParticipant[];
+export interface ISession {
+  id: number;
+  date: string;
   maxParticipants: number;
+  participants: IParticipant[];
 }
+
+export interface IFormation {
+  id: number;
+  titre: string;
+  chargeHor: number;
+  photo: string;
+  niv: 'Debutant' | 'Intermediaire' | 'Avance';
+  motCle: string[];
+  categ: string[];
+  sessions: ISession[];   
+}
+
 export interface IParticipant {
   nom: string;
   prenom: string;
@@ -24,11 +31,4 @@ export interface IFormateur{
     cin:string;
     cv:string;
     specialite:string[];
-}
-export interface ISession{
-  id:number;
-  formation:IFormation[];
-  formateur:IFormateur[];
-  desc:string;
-  date:string;
 }

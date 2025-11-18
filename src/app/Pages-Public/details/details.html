@@ -1,36 +1,56 @@
-<div class="details">
-  <h1>Détails de la formation : {{ formation.titre }}</h1>
+<div class="details-container">
 
-  <img [src]="formation.photo" alt="{{ formation.titre }}" class="logo">
+  <!-- HEADER FORMATION -->
+  <div class="formation-header">
+    <img [src]="formation.photo" alt="{{ formation.titre }}" class="formation-image">
 
-  <p><strong>Durée :</strong> {{ formation.chargeHor }} heures</p>
-  <p>
-    <strong>Participants :</strong> {{ formation.participants.length }} / {{ formation.maxParticipants }}
-  </p>
-  <p>
-    <strong>Description de la formation :</strong><span *ngFor="let s of Session">{{s.formateur}}</span>
-  </p>
-  <p>
-    <strong>Formateur :</strong><span *ngFor="let f of Formateur">{{f.nom}}</span>
-  </p>
-  <hr>
+    <div class="formation-info">
+      <h1>{{ formation.titre }}</h1>
 
-  <h2>Inscription</h2>
+      <div class="formation-meta">
+        <span class="tag niveau">{{ formation.niv }}</span>
+        <span class="tag charge">{{ formation.chargeHor }}h</span>
+      </div>
 
-  <form (submit)="inscrire(); $event.preventDefault()">
+      <p class="formation-desc">
+        Une formation complète pour maîtriser {{ formation.titre }} et améliorer vos compétences.
+      </p>
+    </div>
+  </div>
 
-    <input type="text" [(ngModel)]="nom" name="nom" placeholder="Nom" required>
-    <input type="text" [(ngModel)]="prenom" name="prenom" placeholder="Prénom" required>
-    <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+  <!-- MOTS CLÉS -->
+  <h3>Mots clés</h3>
+  <div class="keywords">
+    <span class="keyword" *ngFor="let m of formation.motCle">{{ m }}</span>
+  </div>
 
-<button 
-  (click)="inscrire()" 
-  [disabled]="formation.participants.length >= formation.maxParticipants"
-  class="btn">
-  S'inscrire
-</button>
+  <!-- CATÉGORIES -->
+  <h3>Catégories</h3>
+  <div class="categories">
+    <span class="category" *ngFor="let c of formation.categ">{{ c }}</span>
+  </div>
 
-  </form>
+  <!-- LISTE DES SESSIONS -->
+  <h2>Sessions disponibles</h2>
 
+  <div class="session-card" *ngFor="let s of formation.sessions">
+
+    <div class="session-date-info">
+      <span class="icon">📅</span>
+      <span class="date-text">{{ s.date }}</span>
+    </div>
+
+    <div class="session-status">
+      Participants : {{ s.participants.length }} / {{ s.maxParticipants }}
+    </div>
+
+    <button 
+      class="btn-inscrire"
+      (click)="goToInscription(s)"
+      [disabled]="s.participants.length >= s.maxParticipants">
+      S'inscrire
+    </button>
+
+  </div>
 
 </div>

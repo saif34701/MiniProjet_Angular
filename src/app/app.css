@@ -1,32 +1,38 @@
-/* ----- NAVBAR CONTAINER ----- */
+/* ===== NAVBAR ===== */
 nav {
-  background-color: #1976d2;
-  padding: 12px 20px;
+  background: #f8fafc;
+  padding: 15px 20px;
   display: flex;
-  align-items: center;
-  gap: 20px;
-  border-radius: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  gap: 30px;
+  border-bottom: 2px solid #e3edf4;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* ----- LINKS ----- */
+/* LINKS */
 nav a {
-  color: white;
   text-decoration: none;
+  color: #004a70;
   font-size: 17px;
-  font-weight: 500;
-  transition: 0.2s ease-in-out;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
 }
 
+/* HOVER */
 nav a:hover {
-  color: #bbdefb;
-  text-decoration: underline;
+  background: #0077a6;
+  color: white;
 }
 
-/* ----- ACTIVE LINK ----- */
+/* ACTIVE LINK (routerLinkActive adds the .active class) */
 nav a.active {
-  font-weight: bold;
-  border-bottom: 2px solid white;
+  background: #0077a6;
+  color: white;
 }
 
-
+/* OPTIONAL: spacing below navbar */
+router-outlet {
+  margin-top: 20px;
+  display: block;
+}
