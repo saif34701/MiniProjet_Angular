@@ -1,0 +1,48 @@
+<div class="admin-formation-container">
+
+  <h1>Gestion des Formations</h1>
+
+  <div class="form-card">
+    <h2>Ajouter une formation</h2>
+
+    <label>Titre</label>
+    <input type="text" [(ngModel)]="titre">
+
+    <label>Charge horaire (h)</label>
+    <input type="number" [(ngModel)]="chargeHor">
+
+    <label>Niveau</label>
+    <select [(ngModel)]="niv">
+      <option>Debutant</option>
+      <option>Intermediaire</option>
+      <option>Avance</option>
+    </select>
+
+    <label>URL de l’image</label>
+    <input type="text" [(ngModel)]="photo">
+
+    <label>Mots clés (séparés par ,)</label>
+    <input type="text" [(ngModel)]="motCle">
+
+    <label>Catégories (séparées par ,)</label>
+    <input type="text" [(ngModel)]="categ">
+
+    <button class="btn-add" (click)="ajouterFormation()">Ajouter</button>
+  </div>
+
+  <h2>Liste des formations</h2>
+
+  <div class="formation-list">
+    <div class="formation-card" *ngFor="let f of formations">
+
+      <img [src]="f.photo" alt="{{f.titre}}">
+      <h3>{{ f.titre }}</h3>
+      <p>Niveau : {{ f.niv }}</p>
+      <p>Charge : {{ f.chargeHor }}h</p>
+
+      <button class="btn-delete" (click)="supprimerFormation(f.id)">Supprimer</button>
+
+    </div>
+  </div>
+
+</div>

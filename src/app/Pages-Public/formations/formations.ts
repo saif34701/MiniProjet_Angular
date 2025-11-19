@@ -29,13 +29,13 @@ export class Formations {
       {
         id: 1,
         date: "2025-01-10",
-        maxParticipants: 5,
+        maxParticipants: 15,
         participants: []
       },
       {
         id: 2,
         date: "2025-01-20",
-        maxParticipants: 5,
+        maxParticipants: 15,
         participants: []
       }
     ]
@@ -49,8 +49,8 @@ export class Formations {
     motCle: ['TypeScript', 'JS', 'Programmation'],
     categ: ['Dev'],
     sessions: [
-      { id: 1, date: "2025-02-05", maxParticipants: 5, participants: [] },
-      { id: 2, date: "2025-02-15", maxParticipants: 5, participants: [] }
+      { id: 1, date: "2025-02-05", maxParticipants: 15, participants: [] },
+      { id: 2, date: "2025-02-15", maxParticipants: 15, participants: [] }
     ]
   }
 ];

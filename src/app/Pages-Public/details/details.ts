@@ -36,13 +36,13 @@ export class Details {
       {
         id: 1,
         date: "2025-01-10 => 2025-01-15",
-        maxParticipants: 5,
+        maxParticipants: 15,
         participants: []
       },
       {
         id: 2,
         date: "2025-01-20 => 2025-01-25",
-        maxParticipants: 5,
+        maxParticipants: 15,
         participants: []
       }
     ]
@@ -56,8 +56,8 @@ export class Details {
     motCle: ['TypeScript', 'JS', 'Programmation'],
     categ: ['Dev'],
     sessions: [
-      { id: 1, date: "2025-02-05 => 2025-02-10", maxParticipants: 5, participants: [] },
-      { id: 2, date: "2025-02-15 => 2025-02-20", maxParticipants: 5, participants: [] }
+      { id: 1, date: "2025-02-05 => 2025-02-10", maxParticipants: 15, participants: [] },
+      { id: 2, date: "2025-02-15 => 2025-02-20", maxParticipants: 15, participants: [] }
     ]
   }
 ];

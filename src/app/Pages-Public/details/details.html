@@ -18,19 +18,19 @@
     </div>
   </div>
 
-  <!-- MOTS CLÉS -->
+
   <h3>Mots clés</h3>
   <div class="keywords">
     <span class="keyword" *ngFor="let m of formation.motCle">{{ m }}</span>
   </div>
 
-  <!-- CATÉGORIES -->
+
   <h3>Catégories</h3>
   <div class="categories">
     <span class="category" *ngFor="let c of formation.categ">{{ c }}</span>
   </div>
 
-  <!-- LISTE DES SESSIONS -->
+
   <h2>Sessions disponibles</h2>
 
   <div class="session-card" *ngFor="let s of formation.sessions">

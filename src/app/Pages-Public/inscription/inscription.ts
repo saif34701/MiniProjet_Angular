@@ -30,8 +30,8 @@ export class Inscription implements OnInit {
       motCle: [],
       categ: ['Dev'],
       sessions: [
-        { id: 1, date: 'Décembre 2025',  maxParticipants: 5, participants: [] },
-        { id: 2, date: 'Février 2026',  maxParticipants: 5, participants: [] }
+        { id: 1, date: 'Décembre 2025',  maxParticipants: 15, participants: [] },
+        { id: 2, date: 'Février 2026',  maxParticipants: 15, participants: [] }
       ]
     },
     {
@@ -43,7 +43,7 @@ export class Inscription implements OnInit {
       motCle: [],
       categ: ['Dev'],
       sessions: [
-        { id: 1, date: 'Mars 2026',  maxParticipants: 5, participants: [] }
+        { id: 1, date: 'Mars 2026',  maxParticipants: 15, participants: [] }
       ]
     }
   ];
@@ -57,11 +57,9 @@ export class Inscription implements OnInit {
     const idFormation = Number(this.route.snapshot.paramMap.get('idFormation'));
     const idSession = Number(this.route.snapshot.paramMap.get('idSession'));
 
-    // 🔥 Récupérer la bonne formation et la bonne session
     this.formation = this.formations.find(f => f.id === idFormation)!;
     this.session = this.formation.sessions.find(s => s.id === idSession)!;
 
-    // 🔥 Charger les participants DE LA SESSION choisie uniquement
     const key = `formation_${this.formation.id}_session_${this.session.id}`;
     this.session.participants = JSON.parse(localStorage.getItem(key) || '[]');
   }
@@ -73,25 +71,20 @@ export class Inscription implements OnInit {
       return;
     }
 
-    // 🔥 Clé UNIQUE pour la session : FORMATION + SESSION
     const key = `formation_${this.formation.id}_session_${this.session.id}`;
 
-    // Charger les participants de CETTE session
     const existing: IParticipant[] = JSON.parse(localStorage.getItem(key) || '[]');
 
-    // Vérifier si pleine
     if (existing.length >= this.session.maxParticipants) {
       alert("Cette session est complète !");
       return;
     }
 
-    // Vérifier si email déjà inscrit
     if (existing.some(p => p.email === this.email)) {
       alert("Vous êtes déjà inscrit à cette session.");
       return;
     }
 
-    // Ajouter le participant
     const participant: IParticipant = {
       nom: this.nom,
       prenom: this.prenom,
@@ -100,10 +93,8 @@ export class Inscription implements OnInit {
 
     existing.push(participant);
 
-    // 🔥 SAUVEGARDER UNIQUEMENT POUR CETTE SESSION
     localStorage.setItem(key, JSON.stringify(existing));
 
-    // Mettre à jour la session en mémoire
     this.session.participants = existing;
 
     alert("Inscription enregistrée !");
