@@ -1,0 +1,61 @@
+<div class="admin-formateurs-container">
+
+  <h1>Gestion des Formateurs</h1>
+
+ 
+  <div class="form-card">
+    <h2>Ajouter un formateur</h2>
+
+    <label>Nom</label>
+    <input type="text" [(ngModel)]="nom">
+
+    <label>Prénom</label>
+    <input type="text" [(ngModel)]="prenom">
+
+    <label>Photo (URL)</label>
+    <input type="text" [(ngModel)]="photo" placeholder="https://...">
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email">
+
+    <label>Téléphone</label>
+    <input type="text" [(ngModel)]="tel">
+
+    <label>CIN</label>
+    <input type="text" [(ngModel)]="cin">
+
+    <label>CV (URL PDF)</label>
+    <input type="text" [(ngModel)]="cv">
+
+    <label>Spécialités (séparées par , )</label>
+    <input type="text" [(ngModel)]="specialite" placeholder="Angular, Photoshop">
+
+    <button class="btn-add" (click)="ajouterFormateur()">Ajouter</button>
+  </div>
+
+  
+  <h2>Liste des formateurs</h2>
+
+  <div class="formateur-list">
+    <div class="formateur-card" *ngFor="let f of formateurs">
+
+      <img [src]="f.photo" class="photo" alt="photo formateur">
+
+      <h3>{{ f.prenom }} {{ f.nom }}</h3>
+
+      <p><strong>Email :</strong> {{ f.email }}</p>
+      <p><strong>Téléphone :</strong> {{ f.tel }}</p>
+      <p><strong>CIN :</strong> {{ f.cin }}</p>
+
+      <p><strong>Spécialités :</strong></p>
+      <div class="tags">
+        <span class="tag" *ngFor="let s of f.specialite">{{ s }}</span>
+      </div>
+
+      <a [href]="f.cv" class="cv-link" target="_blank">Voir CV</a>
+
+      <button class="btn-delete" (click)="supprimerFormateur(f.id)">Supprimer</button>
+    </div>
+  </div>
+
+</div>

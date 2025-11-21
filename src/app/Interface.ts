@@ -25,10 +25,10 @@ export interface IFormateur{
     id:number;
     nom:string;
     prenom:string;
-    photo:string;
+    photo:any;
     email:string;
     tel:string;
     cin:string;
-    cv:string;
+    cv:any;
     specialite:string[];
 }

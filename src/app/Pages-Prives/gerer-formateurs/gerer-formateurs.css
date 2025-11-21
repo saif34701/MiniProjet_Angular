@@ -1,0 +1,93 @@
+.admin-formateurs-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Formulaire */
+.form-card {
+  background: #1b263b;
+  color: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.form-card label {
+  margin-top: 12px;
+  display: block;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+}
+
+.btn-add {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #0077a6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Liste formateurs */
+.formateur-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.formateur-card {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.tags {
+  margin: 8px 0;
+}
+
+.tag {
+  background: #d0ebff;
+  color: #004a70;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 3px;
+  display: inline-block;
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #0077a6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.btn-delete {
+  margin-top: 12px;
+  padding: 8px 14px;
+  background: #b00020;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}

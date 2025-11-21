@@ -1,0 +1,55 @@
+<div class="admin-session-container">
+
+  <h1>Gestion des Sessions</h1>
+
+  <div class="select-formation">
+    <label>Choisir une formation :</label>
+    <select [(ngModel)]="selectedFormationId">
+      <option [ngValue]="null">-- Sélectionner une formation --</option>
+      <option *ngFor="let f of formations" [ngValue]="f.id">
+        {{ f.titre }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-card" *ngIf="selectedFormationId !== null">
+    <h2>Ajouter une session</h2>
+
+    <label>Date de la session</label>
+    <input type="text" [(ngModel)]="date" placeholder="ex : Du 15 au 20 Juin 2025">
+
+    <label>Nombre maximum de participants</label>
+    <input type="number" [(ngModel)]="maxParticipants" placeholder="ex : 15">
+
+    <button class="btn-add" (click)="ajouterSession()">Ajouter la session</button>
+  </div>
+
+  <h2>Liste des sessions par formation</h2>
+
+  <div *ngFor="let f of formations">
+
+    <h3>{{ f.titre }}</h3>
+
+    <div *ngIf="f.sessions.length === 0" class="no-session">
+      Aucune session pour cette formation.
+    </div>
+
+    <div class="session-list" *ngFor="let s of f.sessions">
+      <div class="session-card">
+        
+        <div>
+          <strong>{{ s.date }}</strong>
+          <p>Places max : {{ s.maxParticipants }}</p>
+        </div>
+
+        <button 
+          class="btn-delete" 
+          (click)="supprimerSession(f.id, s.id)">
+          Supprimer
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

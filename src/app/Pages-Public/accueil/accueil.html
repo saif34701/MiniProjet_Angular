@@ -2,13 +2,29 @@
 
   <h1>Liste des Formations disponibles</h1>
 
+  <section class="categories-section" *ngIf="categories.length > 0">
+    <h2>Catégories de formations</h2>
+    <p class="cats-subtitle">
+      Explorez les différents domaines proposés.
+    </p>
 
+    <div class="categories-list">
+      <div class="category-pill" *ngFor="let c of categories">
+        {{ c }}
+      </div>
+    </div>
+  </section>
 
   <div class="formations-list">
     <div class="card" *ngFor="let f of formations">
+
       <h2>{{ f.titre }}</h2>
+
       <img [src]="f.photo" alt="{{f.titre}}">
+
       <p><strong>Niveau :</strong> {{ f.niv }}</p>
+      <p><strong>Catégories :</strong> {{ f.categ.join(', ') }}</p>
+
     </div>
   </div>
 

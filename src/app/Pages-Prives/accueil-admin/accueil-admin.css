@@ -18,14 +18,14 @@
   font-size: 16px;
 }
 
-/* Cards container */
+
 .admin-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
-/* Individual card */
+
 .admin-card {
   background: #1b263b;
   color: white;
@@ -42,20 +42,19 @@
   background: #0d1b2a;
 }
 
-/* Icon */
 .icon {
   font-size: 45px;
   margin-bottom: 15px;
 }
 
-/* Title */
+
 .admin-card h2 {
   margin: 0;
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-/* Description */
+
 .admin-card p {
   font-size: 14px;
   opacity: 0.85;
